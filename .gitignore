@@ -5,9 +5,11 @@
 .vscode/
 .idea/
 .kiro/
+md/
 *.bat
 *.swp
 *.swo
+*.zip
 .phpunit.result.cache
 *~
 
