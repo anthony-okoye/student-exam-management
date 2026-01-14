@@ -1,0 +1,16 @@
+{
+    "name": "online-examination-system/tests",
+    "description": "Online Examination System with PHPUnit Tests",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

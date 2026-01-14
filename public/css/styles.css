@@ -1,0 +1,689 @@
+/* Online Examination System - Main Stylesheet */
+/* Bootstrap 5 is included via CDN in HTML files */
+
+/* ============================================
+   Global Styles
+   ============================================ */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+/* ============================================
+   Navigation Bar Enhancements
+   ============================================ */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    opacity: 0.8;
+}
+
+/* ============================================
+   Card Enhancements
+   ============================================ */
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+}
+
+/* ============================================
+   Button Enhancements
+   ============================================ */
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   Form Enhancements
+   ============================================ */
+.form-control:focus,
+.form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Table Enhancements
+   ============================================ */
+.table {
+    background-color: white;
+}
+
+.table thead th {
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* ============================================
+   Alert Enhancements
+   ============================================ */
+.alert {
+    border: none;
+    border-left: 4px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+    border-left-color: #28a745;
+}
+
+.alert-danger {
+    border-left-color: #dc3545;
+}
+
+.alert-warning {
+    border-left-color: #ffc107;
+}
+
+.alert-info {
+    border-left-color: #17a2b8;
+}
+
+/* ============================================
+   Badge Enhancements
+   ============================================ */
+.badge {
+    padding: 0.35em 0.65em;
+    font-weight: 500;
+}
+
+/* ============================================
+   Timer Styling (Exam Taking Page)
+   ============================================ */
+.exam-timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #28a745;
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.exam-timer.warning {
+    color: #ffc107;
+    animation: pulse-warning 1s ease-in-out infinite;
+}
+
+.exam-timer.danger {
+    color: #dc3545;
+    animation: pulse-danger 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse-warning {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pulse-danger {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Timer container for exam taking page */
+.timer-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.timer.warning {
+    color: #ffc107;
+}
+
+.timer.danger {
+    color: #dc3545;
+}
+
+/* ============================================
+   Loading Spinner Overlay
+   ============================================ */
+.spinner-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-overlay.active {
+    display: flex;
+}
+
+.spinner-overlay .spinner-border {
+    width: 4rem;
+    height: 4rem;
+    border-width: 0.4rem;
+}
+
+.spinner-overlay .spinner-text {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* ============================================
+   Auto-save Indicator
+   ============================================ */
+.auto-save-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.auto-save-indicator.saving {
+    background: #ffc107;
+    color: #000;
+}
+
+.auto-save-indicator.error {
+    background: #dc3545;
+}
+
+.auto-save-indicator.show {
+    display: block;
+    animation: slideInLeft 0.3s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   Question Card Styling
+   ============================================ */
+.question-card {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.question-number {
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.question-content {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.option-label {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.option-label:hover {
+    background-color: #f8f9fa;
+    border-color: #0d6efd;
+    transform: translateX(5px);
+}
+
+.option-label input {
+    margin-right: 10px;
+}
+
+/* ============================================
+   Submit Section
+   ============================================ */
+.submit-section {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 20px;
+    border-top: 2px solid #dee2e6;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    z-index: 100;
+}
+
+/* ============================================
+   Dashboard Cards
+   ============================================ */
+.dashboard-card {
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   Results Page Styling
+   ============================================ */
+.result-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.result-summary.passed {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.result-summary.failed {
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+}
+
+.score-display {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.percentage-display {
+    font-size: 2rem;
+}
+
+.question-card.correct {
+    border-left: 4px solid #28a745;
+    background: #f8fff9;
+}
+
+.question-card.incorrect {
+    border-left: 4px solid #dc3545;
+    background: #fff8f8;
+}
+
+.answer-option {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.answer-option.correct-answer {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.answer-option.student-answer {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+}
+
+.answer-option.student-correct {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.answer-option.student-incorrect {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Mobile devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .timer-container {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+    
+    .timer {
+        font-size: 1.5rem;
+    }
+    
+    .exam-timer {
+        font-size: 1.8rem;
+    }
+    
+    .question-card {
+        padding: 15px;
+    }
+    
+    .question-content {
+        font-size: 1rem;
+    }
+    
+    .score-display {
+        font-size: 2rem;
+    }
+    
+    .percentage-display {
+        font-size: 1.5rem;
+    }
+    
+    .result-summary {
+        padding: 1.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .auto-save-indicator {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .timer-container {
+        padding: 12px 20px;
+    }
+    
+    .timer {
+        font-size: 1.75rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* ============================================
+   Print Styles (for results page)
+   ============================================ */
+@media print {
+    .navbar,
+    .timer-container,
+    .auto-save-indicator,
+    .submit-section,
+    .btn,
+    .spinner-overlay {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+    
+    .question-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border: 2px solid #000;
+    }
+    
+    .btn {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow-sm {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow-md {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow-lg {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-xl {
+    border-radius: 1rem;
+}
+
+/* ============================================
+   Student Management Page Enhancements
+   ============================================ */
+.avatar-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Modern badge styles */
+.bg-info-subtle {
+    background-color: #cfe2ff !important;
+}
+
+.text-info {
+    color: #0d6efd !important;
+}
+
+.bg-success-subtle {
+    background-color: #d1e7dd !important;
+}
+
+.text-success {
+    color: #198754 !important;
+}
+
+.bg-warning-subtle {
+    background-color: #fff3cd !important;
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+/* Table improvements */
+.table thead.table-light th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Button group improvements */
+.btn-group-sm .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.btn-outline-info:hover {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+    color: white;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+/* Card header improvements */
+.card-header.bg-white {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.card.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+

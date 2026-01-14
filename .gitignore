@@ -1,0 +1,36 @@
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+.kiro/
+*.bat
+*.swp
+*.swo
+.phpunit.result.cache
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.mod
+*.md
+!README.md
+
+# Environment varibales
+.env
+
+# Temporary files
+tmp/
+temp/
+cache/
+
+# Vendor (if using Composer)
+vendor/
+
+# Node modules (if using npm)
+node_modules/
